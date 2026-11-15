@@ -1,0 +1,1694 @@
+/* ==========================================================================
+   ONG SOCIEDAD Y MEDIO AMBIENTE (ENTORNO) — CHILE
+   Sistema de Diseño Editorial e Institucional
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. FUENTES TIPOGRÁFICAS (Google Fonts)
+   - Newsreader: Titulares y tesis narrativas (400, 500, regular e itálica)
+   - DM Sans: Menú, cuerpo de lectura, metadatos y colofón (400, 500, 700)
+   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400;1,9..40,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap');
+
+/* --------------------------------------------------------------------------
+   02. VARIABLES Y SISTEMA CROMÁTICO
+   -------------------------------------------------------------------------- */
+:root {
+  /* Paleta cromática oficial */
+  --bg-papel: #F6EFE0;
+  --bg-beige: #ECDEBB;
+  --tinta-oscura: #2C221A;
+  --cafe-estructura: #9E8066;
+  --naranja-acento: #F29400;
+  --velo-hero: rgba(28, 22, 17, 0.56);
+
+  /* Derivados tonales y estructurales */
+  --tinta-secundaria: #4A3B2F;
+  --tinta-atenuada: #6E5A4B;
+  --linea-fina: rgba(158, 128, 102, 0.35);
+  --linea-suave: rgba(158, 128, 102, 0.18);
+  --linea-oscura: rgba(44, 34, 26, 0.2);
+  --nav-scrolled-bg: rgba(246, 239, 224, 0.94);
+  --placa-borde: rgba(158, 128, 102, 0.28);
+
+  /* Tipografía */
+  --font-serif: 'Newsreader', Georgia, Garamond, serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Contenedores y ritmos espaciales */
+  --container-ancho: 1240px;
+  --container-pad: 2rem;
+  --nav-altura: 78px;
+  --transicion-base: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   03. RESET Y ESTILOS BASE
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg-papel);
+  color: var(--tinta-oscura);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.68;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transicion-base);
+}
+
+/* Contenedor centralizado */
+.contenedor {
+  width: 100%;
+  max-width: var(--container-ancho);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+/* Enlace accesible para saltar al contenido principal */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1.5rem;
+  background-color: var(--tinta-oscura);
+  color: var(--bg-papel);
+  padding: 0.75rem 1.25rem;
+  z-index: 9999;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 2px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   04. NAVEGACIÓN STICKY CAMALEÓNICA
+   -------------------------------------------------------------------------- */
+.header-editorial {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  transition: background-color var(--transicion-base),
+              border-color var(--transicion-base),
+              backdrop-filter var(--transicion-base),
+              padding var(--transicion-base),
+              box-shadow var(--transicion-base);
+  padding: 1.2rem 0;
+  border-bottom: 1px solid transparent;
+}
+
+.header-editorial .nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo institucional y placa editorial */
+.nav-marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+
+.placa-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-papel);
+  border-radius: 2px;
+  padding: 6px 10px;
+  border: 1px solid var(--placa-borde);
+  box-shadow: 0 1px 3px rgba(44, 34, 26, 0.08);
+  transition: background-color var(--transicion-base),
+              border-color var(--transicion-base),
+              box-shadow var(--transicion-base);
+}
+
+.logo-entorno {
+  height: 38px;
+  width: auto;
+  display: block;
+  transition: filter var(--transicion-base);
+}
+
+.nombre-institucional {
+  display: flex;
+  flex-direction: column;
+}
+
+.sigla-entorno {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.leyenda-entorno {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* Lista de navegación */
+.nav-lista {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+  list-style: none;
+}
+
+.nav-enlace {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color var(--transicion-base);
+}
+
+/* Indicador sutil de hover y activo (punto o subrayado fino en naranja) */
+.nav-enlace::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--naranja-acento);
+  transition: width var(--transicion-base);
+}
+
+.nav-enlace:hover::after,
+.nav-enlace.activo::after {
+  width: 100%;
+}
+
+.nav-enlace.activo {
+  font-weight: 700;
+}
+
+/* Estado transparente sobre Hero (por defecto en index.html) */
+.header-hero {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(246, 239, 224, 0.12);
+  color: #F6EFE0;
+}
+
+.header-hero .placa-logo {
+  background-color: var(--bg-papel);
+  border-color: rgba(246, 239, 224, 0.3);
+}
+
+.header-hero .logo-entorno {
+  /* Sobre la placa clara del hero el logo se mantiene limpio */
+}
+
+.header-hero .nav-enlace {
+  color: #F6EFE0;
+}
+
+.header-hero .nav-enlace:hover {
+  color: #FFFFFF;
+}
+
+/* Estado camaleónico activado al scroll (o por defecto en páginas internas) */
+.header-scrolled {
+  background-color: var(--nav-scrolled-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--linea-fina);
+  padding: 0.75rem 0;
+  color: var(--tinta-oscura);
+  box-shadow: 0 4px 20px rgba(44, 34, 26, 0.04);
+}
+
+.header-scrolled .placa-logo {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  padding: 2px 4px;
+}
+
+.header-scrolled .logo-entorno {
+  /* Fusión invisible de su fondo blanco con el papel */
+  mix-blend-mode: multiply;
+}
+
+.header-scrolled .nav-enlace {
+  color: var(--tinta-oscura);
+}
+
+.header-scrolled .nav-enlace:hover {
+  color: var(--naranja-acento);
+}
+
+/* Botón menú móvil (hamburguesa editorial) */
+.btn-menu-movil {
+  display: none;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  padding: 0.5rem 0.65rem;
+  color: inherit;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--transicion-base);
+}
+
+.btn-menu-movil span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: currentColor;
+  transition: transform var(--transicion-base), opacity var(--transicion-base);
+}
+
+/* --------------------------------------------------------------------------
+   05. ACTO I — APERTURA ATMOSFÉRICA (HERO 100svh)
+   -------------------------------------------------------------------------- */
+.seccion-hero {
+  position: relative;
+  min-height: 100svh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  background-color: #1c1611;
+  color: #F6EFE0;
+}
+
+.hero-video-contenedor {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  filter: brightness(0.92) contrast(1.05);
+}
+
+.hero-velo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(28, 22, 17, 0.48) 0%,
+    rgba(28, 22, 17, 0.58) 50%,
+    rgba(28, 22, 17, 0.88) 100%
+  );
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+
+.hero-sobretitulo {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(246, 239, 224, 0.82);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-sobretitulo::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--naranja-acento);
+}
+
+.hero-titular {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2.25rem, 4.8vw, 4.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: #FFFFFF;
+  max-width: 960px;
+  margin-bottom: 1.75rem;
+}
+
+.hero-titular em {
+  font-style: italic;
+  font-weight: 400;
+  color: #F6EFE0;
+}
+
+.hero-bajada {
+  font-family: var(--font-sans);
+  font-size: clamp(1.0625rem, 1.35vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(246, 239, 224, 0.9);
+  max-width: 720px;
+  margin-bottom: 2.5rem;
+}
+
+/* Indicador de lectura sobrio (cero botones de llamada a la acción) */
+.hero-indicador-lectura {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(246, 239, 224, 0.75);
+}
+
+.linea-indicador {
+  width: 48px;
+  height: 1px;
+  background-color: var(--cafe-estructura);
+  position: relative;
+  overflow: hidden;
+}
+
+.linea-indicador::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--naranja-acento);
+  animation: pulsoLinea 2.8s infinite ease-in-out;
+}
+
+@keyframes pulsoLinea {
+  0% { left: -100%; }
+  50% { left: 0%; }
+  100% { left: 100%; }
+}
+
+/* Control accesible de video para reducción de movimiento */
+.btn-video-control {
+  position: absolute;
+  bottom: 1.5rem;
+  right: var(--container-pad);
+  z-index: 3;
+  background: rgba(28, 22, 17, 0.6);
+  border: 1px solid rgba(246, 239, 224, 0.2);
+  color: rgba(246, 239, 224, 0.75);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: color var(--transicion-base), border-color var(--transicion-base);
+}
+
+.btn-video-control:hover {
+  color: #FFFFFF;
+  border-color: rgba(246, 239, 224, 0.5);
+}
+
+/* --------------------------------------------------------------------------
+   06. ACTO II — MARCO CONCEPTUAL (Misión y Visión sin autorreferencialidad)
+   -------------------------------------------------------------------------- */
+.seccion-marco {
+  background-color: var(--bg-papel);
+  padding: 7rem 0;
+  position: relative;
+}
+
+.grid-marco {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+}
+
+@media (min-width: 992px) {
+  .grid-marco {
+    grid-template-columns: 4fr 6fr;
+    gap: 5.5rem;
+    align-items: start;
+  }
+}
+
+/* Columna izquierda (El Horizonte) */
+.col-horizonte {
+  position: relative;
+}
+
+.sobretitulo-editorial {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--cafe-estructura);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.titulo-horizonte {
+  font-family: var(--font-serif);
+  font-size: clamp(1.85rem, 2.7vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--tinta-oscura);
+  margin-bottom: 1.75rem;
+}
+
+.texto-mision-sintesis {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--tinta-secundaria);
+}
+
+/* Columna derecha (El Enfoque - Visión) */
+.col-enfoque {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+}
+
+.bloque-enfoque {
+  position: relative;
+  padding-left: 0;
+}
+
+.bloque-enfoque + .bloque-enfoque {
+  padding-top: 2.75rem;
+  border-top: 1px solid var(--cafe-estructura);
+}
+
+.titulo-enfoque {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--tinta-oscura);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.texto-enfoque {
+  font-size: 1rem;
+  line-height: 1.72;
+  color: var(--tinta-atenuada);
+}
+
+/* --------------------------------------------------------------------------
+   07. ACTO III — ÁMBITOS DE INCIDENCIA (Los 3 Objetivos Estratégicos)
+   -------------------------------------------------------------------------- */
+.seccion-incidencia {
+  background-color: var(--bg-papel);
+  padding: 7rem 0;
+  border-top: 1px solid var(--linea-suave);
+}
+
+.cabecera-seccion {
+  margin-bottom: 4rem;
+}
+
+.titulo-seccion {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.2vw, 2.85rem);
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: -0.01em;
+  color: var(--tinta-oscura);
+  margin-top: 0.5rem;
+}
+
+.triptico-incidencia {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  border-top: 1px solid var(--linea-fina);
+  border-bottom: 1px solid var(--linea-fina);
+  padding: 3.5rem 0;
+}
+
+@media (min-width: 992px) {
+  .triptico-incidencia {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .col-incidencia {
+    padding: 0 2.5rem;
+    position: relative;
+  }
+
+  .col-incidencia:first-child {
+    padding-left: 0;
+  }
+
+  .col-incidencia:last-child {
+    padding-right: 0;
+  }
+
+  .col-incidencia + .col-incidencia {
+    border-left: 1px solid var(--linea-fina);
+  }
+}
+
+.num-incidencia {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--naranja-acento);
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.titulo-incidencia {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1.22;
+  color: var(--tinta-oscura);
+  margin-bottom: 1.25rem;
+}
+
+.texto-incidencia {
+  font-size: 0.975rem;
+  line-height: 1.72;
+  color: var(--tinta-atenuada);
+}
+
+/* --------------------------------------------------------------------------
+   08. ACTO IV — CONVERGENCIA DISCIPLINARIA Y TRAYECTORIA (Historia)
+   -------------------------------------------------------------------------- */
+.seccion-historia {
+  background-color: var(--bg-beige);
+  padding: 7.5rem 0;
+  color: var(--tinta-oscura);
+}
+
+/* Bloque Superior: Convergencia Interdisciplinaria */
+.bloque-convergencia {
+  margin-bottom: 5.5rem;
+}
+
+.grid-convergencia {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 992px) {
+  .grid-convergencia {
+    grid-template-columns: 5fr 7fr;
+    gap: 4.5rem;
+    align-items: start;
+  }
+}
+
+.texto-convergencia-intro {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 400;
+  line-height: 1.28;
+  color: var(--tinta-oscura);
+}
+
+.disciplinas-mosaico {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .disciplinas-mosaico {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.item-disciplina {
+  background-color: rgba(246, 239, 224, 0.6);
+  border: 1px solid rgba(158, 128, 102, 0.28);
+  border-radius: 2px;
+  padding: 1.35rem 1.5rem;
+}
+
+.item-disciplina-titulo {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--tinta-oscura);
+  margin-bottom: 0.45rem;
+}
+
+.item-disciplina-desc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--tinta-secundaria);
+}
+
+/* Bloque Inferior: Línea de Tiempo Institucional */
+.bloque-trayectoria {
+  border-top: 1px solid var(--linea-oscura);
+  padding-top: 4.5rem;
+}
+
+.timeline-editorial {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  position: relative;
+  margin-top: 3rem;
+}
+
+@media (min-width: 992px) {
+  .timeline-editorial {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .timeline-editorial::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--cafe-estructura);
+    z-index: 0;
+  }
+}
+
+.hito-item {
+  position: relative;
+  z-index: 1;
+}
+
+.hito-punto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--naranja-acento);
+  border: 2px solid var(--bg-beige);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.hito-epoca {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--tinta-oscura);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.hito-titulo {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--tinta-oscura);
+  margin-bottom: 0.75rem;
+}
+
+.hito-desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--tinta-secundaria);
+}
+
+/* --------------------------------------------------------------------------
+   09. ACTO V — COLOFÓN INSTITUCIONAL (Footer)
+   -------------------------------------------------------------------------- */
+.colofon-institucional {
+  background-color: var(--tinta-oscura);
+  color: var(--bg-beige);
+  padding: 5rem 0 3.5rem;
+  border-top: 1px solid rgba(158, 128, 102, 0.25);
+  font-size: 0.875rem;
+}
+
+.grid-colofon {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid rgba(236, 222, 187, 0.15);
+}
+
+@media (min-width: 992px) {
+  .grid-colofon {
+    grid-template-columns: 6fr 4fr;
+    gap: 4rem;
+    align-items: start;
+  }
+}
+
+/* Izquierda: Identidad legal y referencia jurídica */
+.colofon-legal {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.colofon-nombre-legal {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  letter-spacing: 0.01em;
+}
+
+.colofon-decreto {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: rgba(236, 222, 187, 0.85);
+  max-width: 580px;
+}
+
+.colofon-ubicacion {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--cafe-estructura);
+}
+
+/* Derecha: Enlaces textuales a registros y archivo */
+.colofon-archivo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.colofon-archivo-titulo {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--cafe-estructura);
+}
+
+.colofon-enlaces-lista {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.colofon-enlace {
+  color: var(--bg-beige);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding-bottom: 2px;
+  position: relative;
+  transition: color var(--transicion-base);
+}
+
+.colofon-enlace::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--naranja-acento);
+  transition: width var(--transicion-base);
+}
+
+.colofon-enlace:hover {
+  color: #FFFFFF;
+}
+
+.colofon-enlace:hover::after {
+  width: 100%;
+}
+
+.colofon-separador-textual {
+  color: var(--cafe-estructura);
+  opacity: 0.6;
+}
+
+.colofon-declaracion {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: rgba(236, 222, 187, 0.7);
+  margin-top: 0.75rem;
+}
+
+/* Sub-pie de colofón */
+.colofon-inferior {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 2rem;
+  font-size: 0.75rem;
+  color: rgba(236, 222, 187, 0.6);
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 768px) {
+  .colofon-inferior {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. PÁGINAS INTERNAS — ESTRUCTURAS COMUNES
+   -------------------------------------------------------------------------- */
+.pagina-interna {
+  padding-top: 6.5rem;
+  background-color: var(--bg-papel);
+  min-height: calc(100vh - 350px);
+}
+
+.cabecera-pagina-editorial {
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 1px solid var(--linea-fina);
+}
+
+.cabecera-pagina-editorial .sobretitulo-editorial {
+  color: var(--cafe-estructura);
+  margin-bottom: 0.85rem;
+}
+
+.titular-pagina {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 3.8vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--tinta-oscura);
+  max-width: 900px;
+  margin-bottom: 1.5rem;
+}
+
+.bajada-pagina {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--tinta-secundaria);
+  max-width: 760px;
+}
+
+/* --------------------------------------------------------------------------
+   11. PÁGINA INTERNA: PUBLICACIONES (publicaciones.html)
+   -------------------------------------------------------------------------- */
+.seccion-publicaciones {
+  padding: 3.5rem 0 6rem;
+}
+
+.barra-filtros-editorial {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 3.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--linea-suave);
+}
+
+.etiqueta-filtro-intro {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--cafe-estructura);
+  margin-right: 0.5rem;
+}
+
+.filtro-btn {
+  background: transparent;
+  border: 1px solid var(--cafe-estructura);
+  border-radius: 2px;
+  padding: 0.45rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--tinta-oscura);
+  cursor: pointer;
+  transition: all var(--transicion-base);
+}
+
+.filtro-btn:hover {
+  background-color: var(--bg-beige);
+  border-color: var(--tinta-oscura);
+}
+
+.filtro-btn.activo {
+  background-color: var(--tinta-oscura);
+  color: var(--bg-papel);
+  border-color: var(--tinta-oscura);
+}
+
+.contador-publicaciones {
+  margin-left: auto;
+  font-size: 0.8125rem;
+  color: var(--tinta-atenuada);
+  font-style: italic;
+  font-family: var(--font-serif);
+}
+
+.lista-publicaciones {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.ficha-publicacion {
+  background-color: rgba(246, 239, 224, 0.4);
+  border: 1px solid var(--linea-fina);
+  border-radius: 2px;
+  padding: 2.25rem;
+  transition: border-color var(--transicion-base), box-shadow var(--transicion-base);
+}
+
+.ficha-publicacion:hover {
+  border-color: var(--cafe-estructura);
+  box-shadow: 0 4px 18px rgba(44, 34, 26, 0.05);
+}
+
+.meta-publicacion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.meta-ano {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--naranja-acento);
+}
+
+.meta-area {
+  color: var(--cafe-estructura);
+  font-weight: 500;
+}
+
+.meta-codigo {
+  color: var(--tinta-atenuada);
+  opacity: 0.8;
+}
+
+.titulo-publicacion {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--tinta-oscura);
+  margin-bottom: 1rem;
+}
+
+.resumen-publicacion {
+  font-size: 0.975rem;
+  line-height: 1.72;
+  color: var(--tinta-secundaria);
+  margin-bottom: 1.5rem;
+  max-width: 980px;
+}
+
+.pie-publicacion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--linea-suave);
+  font-size: 0.8125rem;
+}
+
+.autoria-publicacion {
+  color: var(--tinta-atenuada);
+}
+
+.enlace-documento-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--tinta-oscura);
+  border-bottom: 1px solid var(--naranja-acento);
+  padding-bottom: 2px;
+  cursor: pointer;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  transition: color var(--transicion-base), border-color var(--transicion-base);
+}
+
+.enlace-documento-pdf:hover {
+  color: var(--naranja-acento);
+}
+
+/* --------------------------------------------------------------------------
+   12. PÁGINA INTERNA: ARTÍCULOS (articulos.html)
+   -------------------------------------------------------------------------- */
+.seccion-articulos {
+  padding: 3.5rem 0 6rem;
+}
+
+.lista-articulos-editorial {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-articulo {
+  border-top: 1px solid var(--linea-fina);
+  padding: 3rem 0;
+  transition: background-color var(--transicion-base);
+}
+
+.item-articulo:last-child {
+  border-bottom: 1px solid var(--linea-fina);
+}
+
+.grid-articulo-cabecera {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 860px) {
+  .grid-articulo-cabecera {
+    grid-template-columns: 220px 1fr;
+    gap: 3.5rem;
+  }
+}
+
+.meta-articulo-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+}
+
+.articulo-fecha {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--tinta-oscura);
+  letter-spacing: 0.06em;
+}
+
+.articulo-categoria {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--cafe-estructura);
+  font-size: 0.75rem;
+}
+
+.articulo-tiempo {
+  color: var(--tinta-atenuada);
+  font-style: italic;
+  font-family: var(--font-serif);
+}
+
+.cuerpo-articulo-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo-articulo {
+  font-family: var(--font-serif);
+  font-size: clamp(1.65rem, 2.4vw, 2.15rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--tinta-oscura);
+  margin-bottom: 1.15rem;
+}
+
+.extracto-articulo {
+  font-size: 1.05rem;
+  line-height: 1.72;
+  color: var(--tinta-secundaria);
+  margin-bottom: 1.5rem;
+}
+
+.btn-toggle-lectura {
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  color: var(--tinta-oscura);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--cafe-estructura);
+  padding-bottom: 2px;
+  transition: color var(--transicion-base), border-color var(--transicion-base);
+}
+
+.btn-toggle-lectura:hover {
+  color: var(--naranja-acento);
+  border-color: var(--naranja-acento);
+}
+
+/* Área de lectura expandible */
+.contenido-completo-articulo {
+  display: none;
+  margin-top: 2.25rem;
+  padding-top: 2.25rem;
+  border-top: 1px dashed var(--linea-fina);
+}
+
+.contenido-completo-articulo.expandido {
+  display: block;
+  animation: fadeInLectura 0.4s ease;
+}
+
+@keyframes fadeInLectura {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.ensayo-texto {
+  font-size: 1.0625rem;
+  line-height: 1.82;
+  color: var(--tinta-secundaria);
+  max-width: 820px;
+}
+
+.ensayo-texto p {
+  margin-bottom: 1.5rem;
+}
+
+.ensayo-texto blockquote {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--tinta-oscura);
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--naranja-acento);
+  margin: 2rem 0;
+}
+
+.ensayo-referencias {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--linea-suave);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--tinta-atenuada);
+}
+
+/* --------------------------------------------------------------------------
+   13. PÁGINA INTERNA: MIEMBROS (miembros.html)
+   -------------------------------------------------------------------------- */
+.seccion-miembros {
+  padding: 3.5rem 0 6rem;
+}
+
+.grupo-disciplinario {
+  margin-bottom: 5rem;
+}
+
+.cabecera-disciplina {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--cafe-estructura);
+  padding-bottom: 0.85rem;
+  margin-bottom: 2.5rem;
+}
+
+.nombre-disciplina {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--tinta-oscura);
+}
+
+.codigo-disciplina {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--naranja-acento);
+}
+
+.grid-fichas-miembros {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid-fichas-miembros {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.ficha-miembro {
+  background-color: rgba(246, 239, 224, 0.45);
+  border: 1px solid var(--linea-fina);
+  border-radius: 2px;
+  padding: 1.85rem 2rem;
+  transition: border-color var(--transicion-base);
+}
+
+.ficha-miembro:hover {
+  border-color: var(--cafe-estructura);
+}
+
+.nombre-miembro {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--tinta-oscura);
+  margin-bottom: 0.35rem;
+}
+
+.disciplina-base {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cafe-estructura);
+  margin-bottom: 1rem;
+}
+
+.linea-investigacion {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--tinta-secundaria);
+  margin-bottom: 0.85rem;
+}
+
+.rol-incidencia {
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--tinta-atenuada);
+  border-top: 1px solid var(--linea-suave);
+  padding-top: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   14. PÁGINA INTERNA: ENLACES (enlaces.html)
+   -------------------------------------------------------------------------- */
+.seccion-enlaces {
+  padding: 3.5rem 0 6rem;
+}
+
+.categoria-redes {
+  margin-bottom: 4.5rem;
+}
+
+.cabecera-redes {
+  border-bottom: 1px solid var(--cafe-estructura);
+  padding-bottom: 0.85rem;
+  margin-bottom: 2.25rem;
+}
+
+.nombre-categoria-red {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--tinta-oscura);
+}
+
+.grid-entidades {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 860px) {
+  .grid-entidades {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.ficha-entidad {
+  background-color: rgba(246, 239, 224, 0.5);
+  border: 1px solid var(--linea-fina);
+  border-radius: 2px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.entidad-ambito {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--naranja-acento);
+  margin-bottom: 0.65rem;
+}
+
+.entidad-nombre {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--tinta-oscura);
+  margin-bottom: 0.85rem;
+}
+
+.entidad-descripcion {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--tinta-secundaria);
+  margin-bottom: 1.5rem;
+}
+
+.entidad-enlace-externo {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--tinta-oscura);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  align-self: flex-start;
+  border-bottom: 1px solid var(--cafe-estructura);
+  padding-bottom: 2px;
+  transition: color var(--transicion-base), border-color var(--transicion-base);
+}
+
+.entidad-enlace-externo:hover {
+  color: var(--naranja-acento);
+  border-color: var(--naranja-acento);
+}
+
+/* --------------------------------------------------------------------------
+   15. MODAL DE FICHA TÉCNICA Y CONSULTA PDF (Visualizador de Archivo)
+   -------------------------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(28, 22, 17, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.activo {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-documento {
+  background-color: var(--bg-papel);
+  border: 1px solid var(--cafe-estructura);
+  border-radius: 2px;
+  max-width: 760px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2.75rem;
+  position: relative;
+  box-shadow: 0 16px 48px rgba(44, 34, 26, 0.35);
+  color: var(--tinta-oscura);
+}
+
+.btn-cerrar-modal {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--tinta-atenuada);
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color var(--transicion-base);
+}
+
+.btn-cerrar-modal:hover {
+  color: var(--tinta-oscura);
+}
+
+.modal-meta-codigo {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--naranja-acento);
+  margin-bottom: 0.5rem;
+}
+
+.modal-titulo {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--tinta-oscura);
+  margin-bottom: 1.5rem;
+}
+
+.modal-ficha-tecnica {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--cafe-estructura);
+  border-bottom: 1px solid var(--cafe-estructura);
+  margin-bottom: 1.5rem;
+  font-size: 0.8125rem;
+}
+
+@media (min-width: 600px) {
+  .modal-ficha-tecnica {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.modal-ficha-item span {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cafe-estructura);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.modal-resumen-editorial {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--tinta-secundaria);
+  margin-bottom: 2rem;
+}
+
+.modal-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--linea-fina);
+}
+
+.modal-btn-accion {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--tinta-oscura);
+  color: var(--bg-papel);
+  padding: 0.6rem 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 2px;
+  border: 1px solid var(--tinta-oscura);
+  cursor: pointer;
+  transition: all var(--transicion-base);
+}
+
+.modal-btn-accion:hover {
+  background-color: transparent;
+  color: var(--tinta-oscura);
+}
+
+/* --------------------------------------------------------------------------
+   16. RESPONSIVE DESIGN (Mobile First & Breakpoints)
+   -------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  .btn-menu-movil {
+    display: flex;
+  }
+
+  .nav-lista {
+    position: fixed;
+    top: var(--nav-altura);
+    left: 0;
+    right: 0;
+    background-color: var(--bg-papel);
+    border-bottom: 1px solid var(--linea-fina);
+    box-shadow: 0 10px 30px rgba(44, 34, 26, 0.1);
+    flex-direction: column;
+    padding: 2rem var(--container-pad);
+    gap: 1.5rem;
+    align-items: flex-start;
+    display: none;
+  }
+
+  .nav-lista.abierto {
+    display: flex;
+  }
+
+  .header-hero .nav-lista {
+    background-color: #1c1611;
+    border-bottom: 1px solid rgba(246, 239, 224, 0.2);
+  }
+
+  .header-hero .nav-enlace {
+    color: #F6EFE0;
+  }
+
+  .header-scrolled .nav-lista {
+    background-color: var(--bg-papel);
+  }
+
+  .header-scrolled .nav-enlace {
+    color: var(--tinta-oscura);
+  }
+
+  .sigla-entorno {
+    font-size: 1.1rem;
+  }
+
+  .leyenda-entorno {
+    display: none;
+  }
+
+  .seccion-hero {
+    min-height: 92svh;
+  }
+
+  .seccion-marco,
+  .seccion-incidencia,
+  .seccion-historia {
+    padding: 5rem 0;
+  }
+
+  .timeline-editorial::before {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   17. ACCESIBILIDAD Y PREFERS-REDUCED-MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-video {
+    display: none;
+  }
+
+  .hero-video-contenedor {
+    background: radial-gradient(circle at 60% 40%, #443428 0%, #1c1611 100%);
+  }
+
+  .linea-indicador::after {
+    animation: none;
+  }
+}
