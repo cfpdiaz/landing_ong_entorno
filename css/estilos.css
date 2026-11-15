@@ -28,16 +28,16 @@
   --linea-fina: rgba(158, 128, 102, 0.35);
   --linea-suave: rgba(158, 128, 102, 0.18);
   --linea-oscura: rgba(44, 34, 26, 0.2);
-  --nav-scrolled-bg: rgba(246, 239, 224, 0.94);
+  --bg-nav-desplazado: rgba(246, 239, 224, 0.94);
   --placa-borde: rgba(158, 128, 102, 0.28);
 
   /* Tipografía */
-  --font-serif: 'Newsreader', Georgia, Garamond, serif;
-  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --fuente-serif: 'Newsreader', Georgia, Garamond, serif;
+  --fuente-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
   /* Contenedores y ritmos espaciales */
-  --container-ancho: 1240px;
-  --container-pad: 2rem;
+  --ancho-contenedor: 1240px;
+  --relleno-contenedor: 2rem;
   --nav-altura: 78px;
   --transicion-base: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -60,7 +60,7 @@ html {
 body {
   background-color: var(--bg-papel);
   color: var(--tinta-oscura);
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 1.0625rem;
   line-height: 1.68;
   font-weight: 400;
@@ -84,11 +84,11 @@ a {
 /* Contenedor centralizado */
 .contenedor {
   width: 100%;
-  max-width: var(--container-ancho);
+  max-width: var(--ancho-contenedor);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--container-pad);
-  padding-right: var(--container-pad);
+  padding-left: var(--relleno-contenedor);
+  padding-right: var(--relleno-contenedor);
 }
 
 /* Enlace accesible para saltar al contenido principal */
@@ -170,7 +170,7 @@ a {
 }
 
 .sigla-entorno {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.1;
@@ -194,7 +194,7 @@ a {
 }
 
 .nav-enlace {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.875rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -251,7 +251,7 @@ a {
 
 /* Estado camaleónico activado al scroll (o por defecto en páginas internas) */
 .header-scrolled {
-  background-color: var(--nav-scrolled-bg);
+  background-color: var(--bg-nav-desplazado);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--linea-fina);
@@ -357,7 +357,7 @@ a {
 }
 
 .hero-sobretitulo {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.8125rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -378,7 +378,7 @@ a {
 }
 
 .hero-titular {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-weight: 400;
   font-size: clamp(2.25rem, 4.8vw, 4.25rem);
   line-height: 1.12;
@@ -395,7 +395,7 @@ a {
 }
 
 .hero-bajada {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: clamp(1.0625rem, 1.35vw, 1.25rem);
   font-weight: 400;
   line-height: 1.65;
@@ -444,7 +444,7 @@ a {
 .btn-video-control {
   position: absolute;
   bottom: 1.5rem;
-  right: var(--container-pad);
+  right: var(--relleno-contenedor);
   z-index: 3;
   background: rgba(28, 22, 17, 0.6);
   border: 1px solid rgba(246, 239, 224, 0.2);
@@ -493,7 +493,7 @@ a {
 }
 
 .sobretitulo-editorial {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -504,7 +504,7 @@ a {
 }
 
 .titulo-horizonte {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: clamp(1.85rem, 2.7vw, 2.6rem);
   font-weight: 400;
   line-height: 1.15;
@@ -537,7 +537,7 @@ a {
 }
 
 .titulo-enfoque {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: 1.45rem;
   font-weight: 500;
   line-height: 1.25;
@@ -568,7 +568,7 @@ a {
 }
 
 .titulo-seccion {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: clamp(2rem, 3.2vw, 2.85rem);
   font-weight: 400;
   line-height: 1.14;
@@ -611,7 +611,7 @@ a {
 }
 
 .num-incidencia {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.9375rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -621,7 +621,7 @@ a {
 }
 
 .titulo-incidencia {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: 1.55rem;
   font-weight: 400;
   line-height: 1.22;
@@ -665,7 +665,7 @@ a {
 }
 
 .texto-convergencia-intro {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: 1.65rem;
   font-weight: 400;
   line-height: 1.28;
@@ -692,7 +692,7 @@ a {
 }
 
 .item-disciplina-titulo {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.8125rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -755,7 +755,7 @@ a {
 }
 
 .hito-epoca {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.8125rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -766,7 +766,7 @@ a {
 }
 
 .hito-titulo {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.25;
@@ -815,7 +815,7 @@ a {
 }
 
 .colofon-nombre-legal {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: 1.35rem;
   font-weight: 400;
   color: #FFFFFF;
@@ -830,7 +830,7 @@ a {
 }
 
 .colofon-ubicacion {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
@@ -845,7 +845,7 @@ a {
 }
 
 .colofon-archivo-titulo {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -940,7 +940,7 @@ a {
 }
 
 .titular-pagina {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: clamp(2.25rem, 3.8vw, 3.4rem);
   font-weight: 400;
   line-height: 1.15;
@@ -975,7 +975,7 @@ a {
 }
 
 .etiqueta-filtro-intro {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -989,7 +989,7 @@ a {
   border: 1px solid var(--cafe-estructura);
   border-radius: 2px;
   padding: 0.45rem 1rem;
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -1014,7 +1014,7 @@ a {
   font-size: 0.8125rem;
   color: var(--tinta-atenuada);
   font-style: italic;
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
 }
 
 .lista-publicaciones {
@@ -1048,7 +1048,7 @@ a {
 }
 
 .meta-ano {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-weight: 700;
   color: var(--naranja-acento);
 }
@@ -1064,7 +1064,7 @@ a {
 }
 
 .titulo-publicacion {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: 1.65rem;
   font-weight: 500;
   line-height: 1.25;
@@ -1099,7 +1099,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.8125rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1162,7 +1162,7 @@ a {
 }
 
 .articulo-fecha {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-weight: 700;
   color: var(--tinta-oscura);
   letter-spacing: 0.06em;
@@ -1178,7 +1178,7 @@ a {
 .articulo-tiempo {
   color: var(--tinta-atenuada);
   font-style: italic;
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
 }
 
 .cuerpo-articulo-col {
@@ -1187,7 +1187,7 @@ a {
 }
 
 .titulo-articulo {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: clamp(1.65rem, 2.4vw, 2.15rem);
   font-weight: 400;
   line-height: 1.2;
@@ -1207,7 +1207,7 @@ a {
   background: transparent;
   border: none;
   color: var(--tinta-oscura);
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.8125rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1256,7 +1256,7 @@ a {
 }
 
 .ensayo-texto blockquote {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: 1.25rem;
   font-style: italic;
   line-height: 1.5;
@@ -1296,14 +1296,14 @@ a {
 }
 
 .nombre-disciplina {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: 1.75rem;
   font-weight: 500;
   color: var(--tinta-oscura);
 }
 
 .codigo-disciplina {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -1335,7 +1335,7 @@ a {
 }
 
 .nombre-miembro {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: 1.35rem;
   font-weight: 500;
   color: var(--tinta-oscura);
@@ -1343,7 +1343,7 @@ a {
 }
 
 .disciplina-base {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.8125rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1385,7 +1385,7 @@ a {
 }
 
 .nombre-categoria-red {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: 1.75rem;
   font-weight: 500;
   color: var(--tinta-oscura);
@@ -1414,7 +1414,7 @@ a {
 }
 
 .entidad-ambito {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.6875rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1424,7 +1424,7 @@ a {
 }
 
 .entidad-nombre {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.3;
@@ -1440,7 +1440,7 @@ a {
 }
 
 .entidad-enlace-externo {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1503,7 +1503,7 @@ a {
   right: 1.25rem;
   background: transparent;
   border: none;
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 1.25rem;
   line-height: 1;
   color: var(--tinta-atenuada);
@@ -1517,7 +1517,7 @@ a {
 }
 
 .modal-meta-codigo {
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1527,7 +1527,7 @@ a {
 }
 
 .modal-titulo {
-  font-family: var(--font-serif);
+  font-family: var(--fuente-serif);
   font-size: 1.85rem;
   font-weight: 500;
   line-height: 1.2;
@@ -1586,7 +1586,7 @@ a {
   background-color: var(--tinta-oscura);
   color: var(--bg-papel);
   padding: 0.6rem 1.25rem;
-  font-family: var(--font-sans);
+  font-family: var(--fuente-sans);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1619,7 +1619,7 @@ a {
     border-bottom: 1px solid var(--linea-fina);
     box-shadow: 0 10px 30px rgba(44, 34, 26, 0.1);
     flex-direction: column;
-    padding: 2rem var(--container-pad);
+    padding: 2rem var(--relleno-contenedor);
     gap: 1.5rem;
     align-items: flex-start;
     display: none;
