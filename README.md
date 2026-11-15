@@ -2,7 +2,7 @@
 
 Plataforma estática de estética editorial e institucional para la **ONG de Desarrollo, Sociedad y Medio Ambiente (Entorno)** de Chile (Personalidad Jurídica otorgada por Decreto Supremo N° 1120, 29 de noviembre de 2000).
 
-Diseñado bajo la concepción de un *think tank* y espacio de consulta técnica independiente, combinando rigor tipográfico, narrativa socioambiental no autorreferente y ausencia total de llamadas comerciales a la acción (CERO CTAs).
+Diseñado bajo la concepción de un *think tank* y espacio de consulta técnica independiente, combinando rigor tipográfico, narrativa socioambiental no autorreferente y ausencia total de llamadas comerciales a la acción (CERO CTAs), que por lo general tienen las web de las organizaciones sin fines de lucro
 
 ---
 
