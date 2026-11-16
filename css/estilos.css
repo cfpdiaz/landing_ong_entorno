@@ -672,6 +672,13 @@ a {
   color: var(--tinta-oscura);
 }
 
+.texto-convergencia-cuerpo {
+  font-size: 1.05rem;
+  line-height: 1.72;
+  color: var(--tinta-secundaria);
+  margin-bottom: 2rem;
+}
+
 .disciplinas-mosaico {
   display: grid;
   grid-template-columns: 1fr;
@@ -711,6 +718,10 @@ a {
 .bloque-trayectoria {
   border-top: 1px solid var(--linea-oscura);
   padding-top: 4.5rem;
+}
+
+.titulo-trayectoria {
+  margin-bottom: 1rem;
 }
 
 .timeline-editorial {
@@ -859,6 +870,33 @@ a {
   align-items: center;
   gap: 1.5rem;
   list-style: none;
+}
+
+.colofon-enlaces-lista.colofon-iconos {
+  gap: 1.35rem;
+}
+
+.colofon-enlace-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-beige);
+  padding: 0.35rem;
+  opacity: 0.85;
+  transition: color var(--transicion-base),
+              transform var(--transicion-base),
+              opacity var(--transicion-base);
+}
+
+.colofon-enlace-icono svg {
+  display: block;
+}
+
+.colofon-enlace-icono:hover,
+.colofon-enlace-icono:focus-visible {
+  color: var(--naranja-acento);
+  opacity: 1;
+  transform: translateY(-2px);
 }
 
 .colofon-enlace {
@@ -1569,6 +1607,19 @@ a {
   margin-bottom: 2rem;
 }
 
+.modal-nota-citacion {
+  margin-top: 1rem;
+  font-size: 0.8125rem;
+  color: var(--cafe-estructura);
+}
+
+.modal-aviso-disponibilidad {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cafe-estructura);
+}
+
 .modal-acciones {
   display: flex;
   flex-wrap: wrap;
@@ -1611,8 +1662,8 @@ a {
   }
 
   .nav-lista {
-    position: fixed;
-    top: var(--nav-altura);
+    position: absolute;
+    top: 100%;
     left: 0;
     right: 0;
     background-color: var(--bg-papel);
@@ -1690,5 +1741,64 @@ a {
 
   .linea-indicador::after {
     animation: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   18. REGLAS DE IMPRESIÓN (Ficha técnica y archivo)
+   -------------------------------------------------------------------------- */
+@media print {
+  .header-editorial,
+  main,
+  .colofon-institucional,
+  .btn-cerrar-modal,
+  .modal-acciones,
+  .skip-link,
+  .btn-video-control,
+  .btn-menu-movil {
+    display: none !important;
+  }
+
+  html, body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    font-size: 12pt;
+  }
+
+  .modal-overlay {
+    position: static !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  .modal-documento {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    border: 1px solid #999999 !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 1.5cm !important;
+    page-break-inside: avoid;
+  }
+
+  .modal-meta-codigo,
+  .modal-titulo,
+  .modal-ficha-item span,
+  .modal-ficha-item p,
+  .modal-resumen-editorial,
+  .modal-nota-citacion {
+    color: #000000 !important;
+  }
+
+  .modal-ficha-tecnica {
+    border-top: 1pt solid #000000 !important;
+    border-bottom: 1pt solid #000000 !important;
   }
 }

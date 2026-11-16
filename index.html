@@ -50,7 +50,7 @@
     <!-- ACTO I: APERTURA ATMOSFÉRICA (HERO 100svh) -->
     <section class="seccion-hero" aria-label="Apertura institucional">
       <div class="hero-video-contenedor">
-        <video class="hero-video" autoplay muted loop playsinline poster="">
+        <video class="hero-video" autoplay muted loop playsinline>
           <source src="videos/san-pedro.webm" type="video/webm">
           Su navegador no soporta la reproducción de video HTML5.
         </video>
@@ -172,7 +172,7 @@
               </h2>
             </div>
             <div>
-              <p style="font-size: 1.05rem; line-height: 1.72; color: var(--tinta-secundaria); margin-bottom: 2rem;">
+              <p class="texto-convergencia-cuerpo">
                 Comprender la complejidad socioambiental del territorio chileno exige superar la fragmentación del saber positivista. En Entorno, el cruce sistemático entre disciplinas permite abordar problemáticas territoriales con evidencia verificable, pertinencia cultural y perspectiva histórica.
               </p>
 
@@ -201,7 +201,7 @@
         <!-- Bloque Inferior: Línea de Tiempo Institucional -->
         <div class="bloque-trayectoria">
           <span class="sobretitulo-editorial">MEMORIA INSTITUCIONAL</span>
-          <h2 class="titulo-seccion" style="margin-bottom: 1rem;">
+          <h2 class="titulo-seccion titulo-trayectoria">
             Trayectoria y consolidación técnica
           </h2>
 
@@ -272,17 +272,30 @@
         <!-- Derecha: Enlaces textuales sobrios a registros y archivo -->
         <div class="colofon-archivo">
           <span class="colofon-archivo-titulo">Registro y Canales de Archivo</span>
-          <ul class="colofon-enlaces-lista">
+          <ul class="colofon-enlaces-lista colofon-iconos">
             <li>
-              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="colofon-enlace">YouTube</a>
+              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="colofon-enlace-icono" aria-label="Canal de YouTube de ONG Entorno">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="4" ry="4"></rect>
+                  <polygon points="10 9 15 12 10 15 10 9"></polygon>
+                </svg>
+              </a>
             </li>
-            <li class="colofon-separador-textual" aria-hidden="true">·</li>
             <li>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="colofon-enlace">Instagram</a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="colofon-enlace-icono" aria-label="Perfil de Instagram de ONG Entorno">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
             </li>
-            <li class="colofon-separador-textual" aria-hidden="true">·</li>
             <li>
-              <a href="https://www.facebook.com/ongentorno" target="_blank" rel="noopener noreferrer" class="colofon-enlace">Facebook</a>
+              <a href="https://www.facebook.com/ongentorno" target="_blank" rel="noopener noreferrer" class="colofon-enlace-icono" aria-label="Página de Facebook de ONG Entorno">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
             </li>
           </ul>
           <p class="colofon-declaracion">
