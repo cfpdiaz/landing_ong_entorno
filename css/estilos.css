@@ -676,46 +676,15 @@ a {
   color: var(--tinta-oscura);
 }
 
-.texto-convergencia-cuerpo {
+.cuerpo-convergencia p {
   font-size: 1.05rem;
-  line-height: 1.72;
+  line-height: 1.75;
   color: var(--tinta-secundaria);
-  margin-bottom: 2rem;
+  margin-bottom: 1.35rem;
 }
 
-.disciplinas-mosaico {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-@media (min-width: 640px) {
-  .disciplinas-mosaico {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.item-disciplina {
-  background-color: rgba(246, 239, 224, 0.6);
-  border: 1px solid rgba(158, 128, 102, 0.28);
-  border-radius: 2px;
-  padding: 1.35rem 1.5rem;
-}
-
-.item-disciplina-titulo {
-  font-family: var(--fuente-sans);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--tinta-oscura);
-  margin-bottom: 0.45rem;
-}
-
-.item-disciplina-desc {
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: var(--tinta-secundaria);
+.cuerpo-convergencia p:last-child {
+  margin-bottom: 0;
 }
 
 /* Bloque Inferior: Línea de Tiempo Institucional */
