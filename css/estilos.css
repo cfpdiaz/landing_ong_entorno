@@ -1324,34 +1324,6 @@ a {
   padding: 3.5rem 0 6rem;
 }
 
-.grupo-disciplinario {
-  margin-bottom: 5rem;
-}
-
-.cabecera-disciplina {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--cafe-estructura);
-  padding-bottom: 0.85rem;
-  margin-bottom: 2.5rem;
-}
-
-.nombre-disciplina {
-  font-family: var(--fuente-serif);
-  font-size: 1.75rem;
-  font-weight: 500;
-  color: var(--tinta-oscura);
-}
-
-.codigo-disciplina {
-  font-family: var(--fuente-sans);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--naranja-acento);
-}
-
 .grid-fichas-miembros {
   display: grid;
   grid-template-columns: 1fr;
@@ -1381,32 +1353,15 @@ a {
   font-size: 1.35rem;
   font-weight: 500;
   color: var(--tinta-oscura);
-  margin-bottom: 0.35rem;
-}
-
-.disciplina-base {
-  font-family: var(--fuente-sans);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--cafe-estructura);
+  border-bottom: 1px solid var(--linea-suave);
+  padding-bottom: 0.75rem;
   margin-bottom: 1rem;
 }
 
-.linea-investigacion {
+.bio-miembro {
   font-size: 0.9375rem;
   line-height: 1.65;
   color: var(--tinta-secundaria);
-  margin-bottom: 0.85rem;
-}
-
-.rol-incidencia {
-  font-size: 0.8125rem;
-  line-height: 1.55;
-  color: var(--tinta-atenuada);
-  border-top: 1px solid var(--linea-suave);
-  padding-top: 0.75rem;
 }
 
 /* --------------------------------------------------------------------------
